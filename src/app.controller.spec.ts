@@ -18,5 +18,9 @@ describe('AppController', () => {
     it('should return "Hello World!"', () => {
       expect(appController.getHello()).toBe('Hello World!')
     })
+
+    it('should return password level', () => {
+      expect(appController.evaluate({ password: 'Wksrbx/-C.7wHUcV' })).toBe(4)
+    })
   })
 })
