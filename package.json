@@ -6,6 +6,7 @@
   "author": "hota1024 <hotalog@hota1024.com>",
   "license": "MIT",
   "dependencies": {
+    "@types/zxcvbn": "^4.4.1",
     "zxcvbn": "^4.4.2"
   }
 }
