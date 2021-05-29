@@ -9,10 +9,23 @@ export default (request: VercelRequest, response: VercelResponse) => {
   }
 
   const password: string | undefined = request?.body?.password
+  const token: string | undefined = request?.body?.token
 
   if (typeof password === 'undefined') {
     return response.status(400).send({
       message: 'password field is required',
+    })
+  }
+
+  if (typeof token === 'undefined') {
+    return response.status(400).send({
+      message: 'token field is required',
+    })
+  }
+
+  if (typeof token !== process.env.TOKEN) {
+    return response.status(401).send({
+      message: 'invalid token',
     })
   }
 
