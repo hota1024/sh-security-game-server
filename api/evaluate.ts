@@ -23,7 +23,7 @@ export default (request: VercelRequest, response: VercelResponse) => {
     })
   }
 
-  if (typeof token !== process.env.TOKEN) {
+  if (token !== process.env.TOKEN) {
     return response.status(401).send({
       message: 'invalid token',
     })
